@@ -121,7 +121,7 @@ body{
 .Cost{
   display: inline;
   margin: 0px;
-  float: right;
+  /* float: right; */
   font-weight: bold;
   font-family:sans-serif;
 }
@@ -194,7 +194,7 @@ body{
 }
 
 .Form .submit{
-  unset:all;
+  /* unset:all; */
   border:none;
   color: white;
   padding: 10px 85px;

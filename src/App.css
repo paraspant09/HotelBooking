@@ -1,38 +1,373 @@
+html{
+  background-color:#9787FF;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+}
+
+/* Sidebar */
+.App .show-sidebar{
+  width: 15rem;
+}
+
+.App .hide-sidebar{
+  width: 0rem;
+}
+
+.App .sidebar{
+  font-weight: bold;
+  transition: linear 0.5s;
+  cursor: pointer;
+}
+
+.App .sidebar .sidenav-menu{
+  display: none;
+}
+
+.App .sidebar .drop-down .category{
+  font-weight: bold;
+  background-color:white;
+  text-transform: uppercase;
+}
+
+.App .sidebar .drop-down .sub-category{
+  background-color:black;
+  overflow: hidden;
+  transition: max-height 0.5s;
+  max-height: 0em;
+  margin: 0px;
+}
+
+.App .sidebar .sub-category .sidenav-link{
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+/* Homepage */
+.App .homepage{
+  font-weight: bold;
+  background-color: grey;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 8% auto 10%;
+  grid-template-areas: 
+    "header"
+    "content"
+    "footer";
+}
+
+.App .homepage .header{
+  grid-area: header;
+  font-weight: bold;
+  display: flex;
+  background-color: #151E26;
+}
+
+.App .homepage .content{
+  grid-area: content;
+  font-weight: bold;
+  background-color: #1F6D8C;
+}
+
+.App .homepage .footer{
+  grid-area: footer;
+  font-weight: bold;
+  color:white;
+  background-color: #151E26;
+}
+/* inside Header */
+.App .homepage .header .logo{
+  font-weight: bold;
+  flex-grow: 1;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  background-color: #151E26;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.App .homepage .header .logo .show-sidebar-icon{
+  font-size: large;
+  font-weight: bolder;
+  color: white;
+  cursor: pointer;
+  margin-right: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.App .homepage .header .menu{
+  font-weight: bold;
+  flex-grow: 2;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #151E26;
+}
+
+.App .homepage .header .menu .nav-links{
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.App .homepage .header .menu .nav-links .link{
+  text-decoration: none;
+  color: white;
+  background-color:#151E26;
+}
+
+.App .homepage .header .menu .nav-links .link li{
+  list-style: none;
+  margin: 1rem;
+}
+
+/* inside sidebar */
+.App .homepage .sidebar .hide-sidebar-icon{
+  font-size: large;
+  font-weight: bolder;
+  color: blue;
+  cursor: pointer;
+}
+/* inside content Hotel Cards */
+.App .homepage .content .hotels{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.App .homepage .content .hotels .card-container{
+  background-color: #1F6D8C;
+  width: 22rem;
+  height: 22rem;
+}
+
+.App .homepage .content .hotels .card-container .hotel{
+  list-style: none;
+  width: 20rem;
+  height: 20rem;
+  background-color: #7B8AE8;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  border: 0.1rem #7B8AE8 solid;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.App .homepage .content .hotels .card-container .hotel:hover{
+  width: 21rem;
+  height: 21rem;
+  box-shadow: 0.1rem 0.1rem 0.5rem white;
+  transition: 0.2s;
+}
+
+.App .homepage .content .hotels .card-container .hotel .hotel-name{
+  background-color: #7B8AE8;
+  font-size: xx-large;
+  text-align: center;
+  color:rgb(240, 243, 243);
+  border-radius: 1rem 1rem 0rem 0rem;
+}
+
+.App .homepage .content .hotels .card-container .hotel .hotel-place{
+  background-color: gainsboro;
+  font-size: medium;
+  text-align: center;
+}
+
+.App .homepage .content .hotels .card-container .hotel .hotel-image{
+  min-width: 20rem;
+  min-height: 13rem;
+  object-fit: cover;
+}
+
+.App .homepage .content .hotels .card-container .hotel .hotel-image:hover{
+  opacity: 0.5;
+}
+
+.App .homepage .content .hotels .card-container .hotel .hotel-price{
+  background-color:#151E26;
+  font-size: x-large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 2;
+  color:#FFECD4;
+  border-radius: 0rem 0rem 1rem 1rem;
+  padding: 0.4rem;
+}
+
+.App .homepage .content .hotels .card-container .hotel .hotel-price:hover{
+  background-color: #FFECD4;
+  color: #151E26;
+}
+
+/* inside card Create Card,Register & Login */
+.App .homepage .card-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App .homepage .card-container .card{
+  background-color:#151E26;
+  border:#151E26 0.1rem solid;
+  border-radius: 0.5rem;
+  box-shadow: 0.1rem 0.1rem 0.5rem white;
+  color:white;
+  cursor: pointer;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* .App .homepage .card-container .card .cancel {
+  text-align: end;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  padding-right: 0.5rem;
+} */
+
+/* .App .homepage .card-container .card .card-entry{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+} */
+
+.App .homepage .card-container .card .type {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1rem;
+}
+
+.App .homepage .card-container .card .form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color:white;
+  border-radius: 0 0 0.5rem 0.5rem;
+  color: #151E26;
+  padding: 1rem;
+}
+
+.App .homepage .card-container .card .form .error-show{
+  color: red;
+  margin: 0;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.App .homepage .card-container .card .form .error-hide{
+  color: red;
+  margin: 0;
+  display: none;
+}
+
+.App .homepage .card-container .card .form .text-box{
+  padding: 0.5rem;
+  border: #151E26 0.2rem solid;
+  border-top:0rem;
+  border-left:0rem;
+  border-right:0rem;
+  margin: 0.5rem;
+  box-shadow: 0.1rem 0.1rem 0.5rem lightblue;
+  width: 90%;
+}
+
+.App .homepage .card-container .card .form .text-box:focus{
+  outline: none;
+}
+
+.App .homepage .card-container .card .form .submit-btn{
+  color: white;
+  background-color:#151E26;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border: 0rem;
+  border-radius: 0.2rem;
+  font-weight: bolder;
+  letter-spacing: 0.05rem;
+  box-shadow: 0.5rem 0.5rem 1rem lightblue;
+}
+
+.App .homepage .card-container .card .form .submit-btn:focus{
+  outline: rgb(0, 204, 255) solid 0.2rem;
+}
+
+.App .homepage .card-container .card .form .bottom-link{
+  text-align: center;
+}
+
+.App .homepage .card-container .card .type .choice {
+  flex:1;
+  text-align: center;
+  padding-bottom: 0.5rem;
+  margin: 0rem 1rem;
+}
+
+.App .homepage .card-container .card .type .active{
+  border-bottom: 0.2rem white solid;
+}
+
+.App .homepage .card-container .card .form .name-labels{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.App .homepage .card-container .card .form .name-inputs{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+@media screen and (max-width: 762px) {
+  .App .sidebar .sidenav-menu{
+    display: block;
   }
-  to {
-    transform: rotate(360deg);
+
+  .App .homepage .header .menu{
+    display: none;
+  }
+
+  /* Hotel Cards */
+  .App .homepage .content .hotels .card-container{
+    width: 18rem;
+    height: 18rem;
+  }
+
+  .App .homepage .content .hotels .card-container .hotel{
+    width: 16rem;
+    height: 16rem;
+  }
+  
+  .App .homepage .content .hotels .card-container .hotel:hover{
+    width: 17rem;
+    height: 17rem;
+  }
+
+  .App .homepage .content .hotels .card-container .hotel .hotel-image{
+    min-width: 16rem;
+    min-height: 9rem;
+  }
+
+  .App .homepage .content .hotels .card-container .hotel .hotel-price{
+    font-size: large;
   }
 }

@@ -3,10 +3,10 @@ import Card from './Card';
 
 function HotelCards() {
     let hotels=[
-        {id:1,name:"Raj",place:"Mumbai",image:"/images/hotel_1.jpg",price:"3000"},
-        {id:2,name:"Rohit",place:"Delhi",image:"/images/hotel_2.jpg",price:"4000"},
-        {id:3,name:"Rits",place:"Agra",image:"/images/hotel_3.jpg",price:"1000"},
-        {id:4,name:"Taj",place:"Rajasthan",image:"/images/hotel_4.jpg",price:"5000"}];
+        {id:1,name:"RajRajRajRajRajRajRaj",city:"PunePuneP",state:"MumbaiMumbai",image:"/images/hotel_1.jpg",minprice:"3000"},
+        {id:2,name:"Rohit",city:"CP",state:"Delhi",image:"/images/hotel_2.jpg",minprice:"4000"},
+        {id:3,name:"Rits",city:"Nainital",state:"UK",image:"/images/hotel_3.jpg",minprice:"1000"},
+        {id:4,name:"Taj",city:"Jaipur",state:"Rajasthan",image:"/images/hotel_4.jpg",minprice:"5000"}];
     return (
         <ul className="hotels">
             {
